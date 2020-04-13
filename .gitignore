@@ -1,0 +1,34 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# SERVER
+typeorm-server/.idea/
+typeorm-server/.vscode/
+typeorm-server/node_modules/
+typeorm-server/build/
+typeorm-server/tmp/
+typeorm-server/temp/
+
+
+
+# WEB
+# dependencies
+web/node_modules
+web/.pnp
+web/.pnp.js
+
+# testing
+web/coverage
+
+# production
+web/build
+
+# misc
+web/.DS_Store
+web/.env.local
+web/.env.development.local
+web/.env.test.local
+web/.env.production.local
+
+*/npm-debug.log*
+*/yarn-debug.log*
+*/yarn-error.log*
