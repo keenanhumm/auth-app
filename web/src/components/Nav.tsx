@@ -7,6 +7,9 @@ export const Nav: React.FC<Props> = () => {
   return (
     <div>
       <div>
+        <Link to="/">Home</Link>
+      </div>
+      <div>
         <Link to="/register">Register</Link>
       </div>
       <div>
