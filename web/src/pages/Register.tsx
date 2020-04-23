@@ -31,28 +31,31 @@ export const RegisterPage: React.FC<RouteComponentProps> = ({ history }) => {
 
   // PRESENTATION
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <input
-          id="email"
-          type="email"
-          value={email}
-          onChange={handleChangeEmail}
-          placeholder="Email"
-          required
-        />
-      </div>
-      <div>
-        <input
-          id="password"
-          type="password"
-          value={password}
-          onChange={handleChangePassword}
-          placeholder="Password"
-          required
-        />
-      </div>
-      <button type="submit">register</button>
-    </form>
+    <div>
+      <h1>Register</h1>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <input
+            id="email"
+            type="email"
+            value={email}
+            onChange={handleChangeEmail}
+            placeholder="Email"
+            required
+          />
+        </div>
+        <div>
+          <input
+            id="password"
+            type="password"
+            value={password}
+            onChange={handleChangePassword}
+            placeholder="Password"
+            required
+          />
+        </div>
+        <button type="submit">Register</button>
+      </form>
+    </div>
   );
 };

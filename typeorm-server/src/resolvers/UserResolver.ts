@@ -26,6 +26,12 @@ export class UserResolver {
     return `user id is ${payload!.userId} dummy`;
   }
 
+  @Query(() => User)
+  @UseMiddleware(isAuthenticated)
+  async user(@Arg("userId") userId: string) {
+    return User.findOne(userId);
+  }
+
   @Query(() => [User])
   async users() {
     return User.find();

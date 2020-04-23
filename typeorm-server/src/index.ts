@@ -9,10 +9,17 @@ import cookieParser from "cookie-parser";
 import { verify } from "jsonwebtoken";
 import { User } from "./entity/User";
 import { createAccessToken, attachRefreshToken } from "./auth/tokenManagement";
+import cors from "cors";
 
 (async () => {
   const app = express();
   app.use(cookieParser());
+  app.use(
+    cors({
+      credentials: true,
+      origin: "http://localhost:3000",
+    })
+  );
   app.get("/", (_req, res) => res.send("hello"));
 
   app.post("/refresh", async (req, res) => {
@@ -54,7 +61,7 @@ import { createAccessToken, attachRefreshToken } from "./auth/tokenManagement";
       resolvers: [UserResolver],
     }),
     context: ({ req, res }) => ({ req, res }),
-  }).applyMiddleware({ app });
+  }).applyMiddleware({ app, cors: false });
 
   app.listen(getEnvVariable("PORT_NUM"), () => {
     console.log("express server started");

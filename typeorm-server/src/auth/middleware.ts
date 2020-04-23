@@ -6,7 +6,6 @@ import NotAuthenticatedError from "../entity/NotAuthenticatedError";
 
 export const isAuthenticated: MiddlewareFn<MyContext> = ({ context }, next) => {
   const authHeaderValue = context.req.headers["authorization"];
-
   if (!authHeaderValue) throw new NotAuthenticatedError();
 
   try {
